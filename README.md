@@ -1,33 +1,88 @@
-# Starter code - OpenClassrooms WPS | P3
+# ♟ Chess Tournament Manager (CLI)
 
-This repository contains the work that has been done so far on the chess tournament program.
+Manage chess clubs, players, and tournaments from a friendly command-line interface.\
+Built with Python, flake8-linting, and HTML lint reports for clean, maintainable code.
 
-### Data files
+---
 
-There are data files provided:
-- JSON files for the chess clubs of Springfield and Cornville
-- JSON files for two tournaments: one completed, and one in progress
+## 📋 Features
 
-### Models
+- Manage chess clubs and player rosters
+- Create and run multiple tournaments
+- Register players, enter match results, and advance rounds
+- Auto-generate tournament reports
+- Linting with flake8 + HTML report generation
 
-This package contains the models already defined by the application:
-* `Player` is a class that represents a chess player
-* `Club` is a class that represents a chess club (including `Player`s)
-* `ClubManager` is a manager class that allows to manage all clubs (and create new ones)
+---
 
-### Screens
+## 🛠 Tech Stack
 
-This package contains classes that are used by the application to display information from the models on the screen.
-Each screen returns a Command instance (= the action to be carried out).
+- **Language:** Python 3.9
 
-### Commands
+- **Linting:** flake8 + flake8-html
 
-This package contains "commands" - instances of classes that are used to perform operations from the program.
-Commands follow a *template pattern*. They **must** define the `execute` method.
-When executed, a command returns a context.
+- **Data storage:** JSON files (`/data` folder)
 
-### Main application
 
-The main application is controlled by `manage_clubs.py`. Based on the current Context instance, it instantiates the screens and runs them. The command returned by the screen is then executed to obtain the next context.
 
-The main application is an infinite loop and stops when a context has the attribute `run` set to False.
+## 🚀 Getting Started
+
+### 1. Clone and enter folder
+
+```bash
+git clone <REPO_URL>
+cd <FOLDER_NAME>
+```
+
+### 2. Create and activate venv
+
+```bash
+python -m venv .venv
+# Windows
+. .venv/Scripts/activate
+# macOS/Linux
+source .venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## ▶ Running the App
+
+```bash
+python manage_clubs.py
+```
+
+Follow the on-screen menus to navigate clubs, tournaments, and players.
+
+---
+
+## 🧹 Linting & HTML Report
+
+### Run flake8 normally
+
+```bash
+flake8 .
+```
+
+### Generate HTML report
+
+```bash
+flake8 --format=html --htmldir=flake8_report
+```
+
+Open `flake8_report/index.html` in your browser to view the report.
+
+---
+
+##
+
+---
+
+##
+
