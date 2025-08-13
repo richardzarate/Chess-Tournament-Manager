@@ -1,5 +1,6 @@
 from commands.context import Context
 from models import ClubManager
+from models import TournamentManager
 
 from .base import BaseCommand
 
@@ -9,4 +10,5 @@ class ClubListCmd(BaseCommand):
 
     def execute(self):
         cm = ClubManager()
-        return Context("main-menu", clubs=cm.clubs)
+        tm = TournamentManager(club_manager=cm)
+        return Context("main-menu", club_manager=cm, tournament_manager=tm)

@@ -18,6 +18,7 @@ class Player:
         self._birthdate = None
         # And a public one with a getter/setter for the birthday (str)
         self.birthday = birthday
+        self.points = 0
 
     def __str__(self):
         return f"<{self.name}>"
@@ -53,6 +54,7 @@ class Player:
 
         data = {attr: getattr(self, attr) for attr in ("name", "email", "chess_id")}
         # We make sure to use the str representation of the date
-        # datetime is notnatively serializable in JSON
+        # datetime is not natively serializable in JSON
         data["birthday"] = self.birthday
+        data["points"] = self.points
         return data

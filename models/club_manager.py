@@ -16,6 +16,13 @@ class ClubManager:
                 except json.JSONDecodeError:
                     print(filepath, "is invalid JSON file.")
 
+    def get_player_by_chess_id(self, chess_id):
+        for club in self.clubs:
+            for player in club.players:
+                if player.chess_id == chess_id:
+                    return player
+        return None  # If not found
+
     def create(self, name):
         filepath = self.data_folder / (name.replace(" ", "") + ".json")
         club = ChessClub(name=name, filepath=filepath)
